@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/flatpak/flatpak-builder/refs/heads/main/data/flatpak-manifest.schema.json",
+  "id": "com.tibia.Tibia",
+  "branch": "stable",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "24.08",
+  "sdk": "org.freedesktop.Sdk",
+  "command": "tibia",
+  "tags": [
+    "proprietary"
+  ],
+  "finish-args": [
+    "--device=dri",
+    "--share=ipc",
+    "--share=network",
+    "--socket=pulseaudio",
+    "--filesystem=xdg-run/pipewire-0:ro",
+    "--socket=x11"
+  ],
+  "modules": [
+    {
+      "name": "tibia",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 -t ${FLATPAK_DEST}/bin apply_extra",
+        "install -Dm644 -t ${FLATPAK_DEST}/share/applications ${FLATPAK_ID}.desktop",
+        "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps ${FLATPAK_ID}.png",
+        "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml",
+        "ln -s ${FLATPAK_DEST}/extra/Tibia ${FLATPAK_DEST}/bin/tibia"
+      ],
+      "sources": [
+        {
+          "type": "extra-data",
+          "filename": "tibia.tar.gz",
+          "url": "https://static.tibia.com/download/tibia.x64.tar.gz",
+          "sha256": "479ee6b47ab9a0b460053cb8a6929fbfa8048cc4add8e840a9dc744815f753fe",
+          "size": 28705678
+        },
+        {
+          "type": "script",
+          "dest-filename": "apply_extra",
+          "commands": [
+            "tar xf tibia.tar.gz --strip-components 1"
+          ]
+        },
+        {
+          "type": "file",
+          "path": "com.tibia.Tibia.desktop"
+        },
+        {
+          "type": "file",
+          "path": "com.tibia.Tibia.metainfo.xml"
+        },
+        {
+          "type": "file",
+          "path": "com.tibia.Tibia.png"
+        }
+      ]
+    }
+  ]
+}

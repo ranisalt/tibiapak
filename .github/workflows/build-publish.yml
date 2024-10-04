@@ -1,0 +1,27 @@
+name: Build and publish
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'com.tibia.Tibia.*'
+
+  workflow_dispatch:  # Allow manual triggering of the workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-24.08
+      options: --privileged
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: flathub-infra/flatpak-github-actions/flatpak-builder@master
+        with:
+          manifest-path: com.tibia.Tibia.json
+          gpg-sign: ${{ secrets.GPG_KEYID }}
+          verbose: true
