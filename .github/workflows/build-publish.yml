@@ -20,8 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: crazy-max/ghaction-import-gpg@v6
+        id: import-gpg
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
       - uses: flathub-infra/flatpak-github-actions/flatpak-builder@master
         with:
           manifest-path: com.tibia.Tibia.json
-          gpg-sign: ${{ secrets.GPG_KEYID }}
+          gpg-sign: ${{ steps.import-gpg.outputs.keyid }}
           verbose: true
