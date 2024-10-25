@@ -5,10 +5,8 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "24.08",
   "sdk": "org.freedesktop.Sdk",
-  "command": "tibia",
-  "tags": [
-    "proprietary"
-  ],
+  "command": "tibia-wrapper",
+  "tags": ["proprietary"],
   "finish-args": [
     "--device=dri",
     "--share=ipc",
@@ -22,11 +20,10 @@
       "name": "tibia",
       "buildsystem": "simple",
       "build-commands": [
-        "install -Dm755 -t ${FLATPAK_DEST}/bin apply_extra",
+        "install -Dm755 -t ${FLATPAK_DEST}/bin apply_extra tibia-wrapper",
         "install -Dm644 -t ${FLATPAK_DEST}/share/applications ${FLATPAK_ID}.desktop",
         "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps ${FLATPAK_ID}.png",
-        "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml",
-        "ln -s ${FLATPAK_DEST}/extra/Tibia ${FLATPAK_DEST}/bin/tibia"
+        "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml"
       ],
       "sources": [
         {
@@ -39,8 +36,14 @@
         {
           "type": "script",
           "dest-filename": "apply_extra",
+          "commands": ["tar xfv tibia.tar.gz"]
+        },
+        {
+          "type": "script",
+          "dest-filename": "tibia-wrapper",
           "commands": [
-            "tar xf tibia.tar.gz --strip-components 1"
+            "cp -rut ${XDG_RUNTIME_DIR} /app/extra/Tibia",
+            "exec ${XDG_RUNTIME_DIR}/Tibia/Tibia"
           ]
         },
         {
