@@ -22,7 +22,10 @@
     <url type="homepage">https://www.cipsoft.com/</url>
   </developer>
   <releases>
+    <release version="ca6409f31112a465f9a4c8ba834f491d8f3a3d00" date="2024-11-06"></release>
+    <release version="df069e2d82b831c9120aae556252c1f8f61017bc" date="2024-11-05"></release>
     <release version="dd51c7e9702bf63ab32d6d698373b83bcff1f473" date="2024-10-15"></release>
+    <release version="142f1597e980568961f92971e8db502b19863cf5" date="2024-10-08"></release>
     <release version="7103e290f3a164b9199e5fe8082aef95d22925c5" date="2024-09-24"></release>
     <release version="e4681a5be6b617e1ead45afab5377e8836d800e3" date="2024-09-17"></release>
     <release version="5cb4ccd3a17b99a571201e92a8f925f5f19e6c63" date="2024-09-11"></release>
