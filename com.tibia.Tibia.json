@@ -36,7 +36,7 @@
         {
           "type": "script",
           "dest-filename": "apply_extra",
-          "commands": ["tar xfv tibia.tar.gz"]
+          "commands": ["tar xf tibia.tar.gz"]
         },
         {
           "type": "script",
