@@ -4,27 +4,53 @@
   <summary>Become a part of Tibia, the MMORPG classic that has been expanded for more than 25 years</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary</project_license>
+
   <recommends>
     <display_length compare="ge">1020</display_length>
     <memory>4096</memory>
   </recommends>
+
   <description>
     <p>Tibia is one of the oldest and most successful massively multiplayer online role-playing games (MMORPG) created in Europe. In an MMORPG people from all over the world meet on a virtual playground to explore areas, solve tricky riddles and undertake heroic exploits.</p>
     <p>For more than 25 years now, players have been visiting the medieval world of Tibia. At present, more than 500,000 players from all over the world inhabit the Tibian continent enjoying the numerous game features.</p>
     <p>Acting as knights, paladins, sorcerers or druids, players are faced with the challenge of developing the skills of their selected characters, exploring a large variety of areas and dangerous dungeons and interacting with other players on a social and diplomatic level. Besides the sophisticated chat tools it is especially the unique freedom players enjoy in Tibia that create an enormously immersive gaming experience.</p>
     <p>NOTE: This wrapper is not verified by, affiliated with, or supported by CipSoft GmbH.</p>
   </description>
+
   <categories>
     <category>Game</category>
   </categories>
+
   <launchable type="desktop-id">com.tibia.Tibia.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Tibia - you'll never forget your first dragon</caption>
+      <image>https://static.tibia.com/images/abouttibia/tibia_screenshot_1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Set foot into the widely unexplored land of the jungle in Tiquanda</caption>
+      <image>https://static.tibia.com/images/abouttibia/tibia_screenshot_2.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Stand up for your opinion and if necessary declare war on your enemies</caption>
+      <image>https://static.tibia.com/images/abouttibia/tibia_screenshot_3.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Become a member of a guild and hold important meetings in your own guildhall</caption>
+      <image>https://static.tibia.com/images/abouttibia/tibia_screenshot_4.png</image>
+    </screenshot>
+  </screenshots>
+
   <url type="homepage">https://www.tibia.com</url>
   <url type="faq">https://www.tibia.com/support/</url>
   <url type="help">https://www.tibia.com/gameguides/</url>
+
   <developer id="com.cipsoft">
     <name>CipSoft GmbH</name>
     <url type="homepage">https://www.cipsoft.com/</url>
   </developer>
+
   <releases>
     <release version="db74b1ef1501e611588223848707a42f7167baa8" date="2024-11-26"></release>
     <release version="159f385dd02a01903867530323e7228e6e5c6eab" date="2024-11-25"></release>
@@ -39,11 +65,13 @@
     <release version="0e4f6fcb50b93da84ffa66ef3551bba699fb070b" date="2024-09-10"></release>
     <release version="6936175da5ab11ba7abd26018872f692502d26c5" date="2024-09-02"></release>
   </releases>
+
   <requires>
     <control>pointing</control>
     <control>keyboard</control>
     <internet>always</internet>
   </requires>
+
   <content_rating type="oars-1.1">
     <content_attribute id="violence-fantasy">mild</content_attribute>
     <content_attribute id="violence-bloodshed">mild</content_attribute>
