@@ -58,6 +58,24 @@
           "type": "file",
           "path": "com.tibia.Tibia.png"
         }
+      ],
+      "modules": [
+	{
+	  "name": "libevent",
+	  "buildsystem": "cmake-ninja",
+	  "cleanup": [
+	    "/bin",
+	    "/include",
+	    "/lib/pkgconfig"
+	  ],
+	  "sources": [
+	    {
+	      "type": "git",
+	      "url": "https://github.com/libevent/libevent",
+	      "tag": "release-2.1.12-stable"
+	    }
+	  ]
+	}
       ]
     }
   ]
