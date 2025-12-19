@@ -30,8 +30,8 @@
           "type": "extra-data",
           "filename": "tibia.tar.gz",
           "url": "https://static.tibia.com/download/tibia.x64.tar.gz",
-          "sha256": "cd159f932c29cab647c7f02f967f7a766ea0e65bf13878da3e8adcaba6cb5250",
-          "size": 29415145
+          "sha256": "3ff5b1507531c18fe413db88902f66953a4fff841279a13c95a839f2f6330887",
+          "size": 29301555
         },
         {
           "type": "script",
