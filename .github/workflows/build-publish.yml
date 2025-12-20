@@ -36,3 +36,4 @@ jobs:
           repository: stable
           flat-manager-url: https://tibiapak.rsa.sh
           token: ${{ secrets.REPO_TOKEN }}
+          verbose: true
