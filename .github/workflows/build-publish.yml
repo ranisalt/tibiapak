@@ -31,6 +31,12 @@ jobs:
           manifest-path: com.tibia.Tibia.json
           gpg-sign: ${{ steps.import-gpg.outputs.keyid }}
 
+      - uses: xiaotianxt/bypass-cloudflare-for-github-action@v2.0.1
+        with:
+          cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
+          cf_zone_id: ${{ secrets.CF_ZONE_ID }}
+          cf_api_token: ${{ secrets.CF_API_TOKEN }}
+
       - uses: flatpak/flatpak-github-actions/flat-manager@v6
         with:
           repository: stable
