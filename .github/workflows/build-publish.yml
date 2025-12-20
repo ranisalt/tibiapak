@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: sabrina
+    runs-on: ubuntu-latest
 
     container:
       image: ghcr.io/flathub-infra/flatpak-github-actions:freedesktop-24.08
