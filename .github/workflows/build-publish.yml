@@ -31,8 +31,6 @@ jobs:
           manifest-path: com.tibia.Tibia.json
           gpg-sign: ${{ steps.import-gpg.outputs.keyid }}
 
-      - run: apt-get update && apt-get install -y jq
-
       - uses: xiaotianxt/bypass-cloudflare-for-github-action@v2.0.1
         with:
           cf_account_id: ${{ secrets.CF_ACCOUNT_ID }}
